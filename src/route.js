@@ -4,6 +4,6 @@ const controller = require('./controller')
 const route = Router()
 
 route.get('/', controller.greetings)
-route.post('/send-message', controller.sendMessage)
+route.post('/sendMessage', controller.sendMessage)
 
 module.exports = route
