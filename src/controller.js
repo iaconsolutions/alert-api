@@ -1,8 +1,7 @@
-const axios = require('axios')
-const dotenv = require('dotenv')
-const path = require('path')
+const { config } = require('dotenv')
+const { join } = require('path')
 
-dotenv.config({ path: path.join(__dirname, '..', '.env') })
+config({ path: join(__dirname, '..', '.env') })
 
 exports.greetings = (req, res) => {
     res.send('Olá, seja bem-vindo(a) Alert API.')
@@ -10,16 +9,16 @@ exports.greetings = (req, res) => {
 
 exports.sendMessage = async (req, res) => {
     try {
-        const { message } = req.body
-        const { TOKEN: token, CHANNEL: channel } = process.env
+        const { TOKEN: token } = process.env
+        const { channel, message } = req.body
+
+        console.log(`token: ${token}`)
+        console.log(`channel: ${channel}`)
+        console.log(message)
 
         const formData = new FormData()
         formData.set('chat_id', channel)
         formData.set('text', message)
-        
-        console.log(token)
-        console.log(formData.get('chat_id'))
-        console.log(formData.get('text'))
         
         const url = `https://api.telegram.org/bot${token}/sendMessage`
         const request = await fetch(url, {
