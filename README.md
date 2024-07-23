@@ -1,12 +1,12 @@
-# Alert API
+# Telegram Alert Microservice
 
-**Alert API** é uma api que permite enviar mensagens para um grupo do Telegram. Este serviço pode ser integrado com outros sistemas para enviar alertas e notificações.
+**Telegram Alert Microservice** é um microserviço que se conecta à API do Telegram para enviar mensagens para um grupo específico. Este serviço é ideal para integrar com sistemas de monitoramento ou alertas para notificar eventos diretamente em um grupo do Telegram.
 
 ## Funcionalidades
 
-- Envia mensagens para um grupo do Telegram.
-- Configurável via variáveis de ambiente.
-- Simples e fácil de integrar com outros sistemas.
+- Conecta-se à API do Telegram para enviar mensagens.
+- Permite a configuração via variáveis de ambiente.
+- Disponível como um serviço HTTP para receber solicitações de envio de mensagens.
 
 ## Pré-requisitos
 
@@ -19,13 +19,13 @@
 1. **Clone o repositório:**
 
    ```bash
-   git clone https://github.com/iaconsolutions/alert-api
-   cd alert-api
+   git clone https://github.com/iaconsolutions/telegram-alert-microservice.git
+   cd telegram-alert-microservice
 
 2. Instale as dependências:
 
    ```bash
-   cd alert-api
+   cd telegram-alert-microservice
    npm install
    ```
 3. Inicie o servidor:
